@@ -281,7 +281,7 @@ details.cv[open] summary.cv__summary::after{
 
 .cv__item--teaching{
   display: grid !important;
-  grid-template-columns: minmax(0, 1fr) fit-content(260px);
+  grid-template-columns: minmax(0, 1fr) fit-content(320px);
   column-gap: 12px;
   row-gap: 10px;
   align-items: start;
