@@ -273,22 +273,24 @@ details.cv[open] summary.cv__summary::after{
   font-size: .95rem;
 }
 
-/*  Teaching은 grid 대신 flex로 강제: 왼쪽(내용) 최대 확보 */
 .cv__item--teaching{
-  display: flex !important;
-  align-items: baseline;
-  gap: 12px;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) fit-content(260px);
+  column-gap: 12px;
+  row-gap: 10px;
+  align-items: start;
+  margin-top: 8px;
 }
 
+/* 왼쪽(내용) */
 .cv__item--teaching .cv__what{
-  flex: 1 1 auto;   /*  왼쪽이 최대한 넓게 */
-  min-width: 0;     /*  flex에서 줄바꿈 계산 안정화 */
+  min-width: 0;
 }
 
+/* 오른쪽(기간) */
 .cv__item--teaching .cv__when{
-  flex: 0 0 auto;   /*  오른쪽은 필요한 만큼만 */
-  white-space: nowrap;
   text-align: right;
+  white-space: normal; /* ✅ nowrap 제거! (기간이 길면 오른쪽 칸이 너무 커져서 내용이 좁아짐) */
   color: var(--muted);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: .95rem;
